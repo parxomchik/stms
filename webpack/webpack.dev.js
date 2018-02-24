@@ -24,9 +24,7 @@ module.exports = {
     plugins: [
 		new CopyWebpackPlugin([
 			{ context: './src/assets/images', from: '**/*', to: './assets/images' },
-            { from: 'src/assets/fonts/glyphicons-halflings-regular.woff', to: 'fonts' },
-            { from: 'src/assets/fonts/glyphicons-halflings-regular.ttf', to: 'fonts' },
-            { from: 'src/assets/fonts/glyphicons-halflings-regular.eot', to: 'fonts' },
+			{ context: './src/assets/fonts', from: '**/*', to: './fonts' },
         ]),
         new HtmlWebpackPlugin({
             template: './index.html',
