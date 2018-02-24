@@ -1,0 +1,16 @@
+node_modules
+npm-debug.log
+/app
+/e2e/**/*.js
+.tmp
+.tscache
+.vscode
+.idea
+.vagrant
+typings
+tsd-debug.log
+.history
+.DS_Store
+wallaby.conf.js
+out
+.npmrc
