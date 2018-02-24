@@ -1,10 +1,3 @@
-# `wc-ng-skeleton` — the skeleton for double dutch Angular 1.x apps
-This project is an application skeleton for a typical double dutch [AngularJS][angularjs] web app. You can use it
-to quickly bootstrap your angular webapp projects and dev environment for these projects.
-
-The skeleton contains a sample AngularJS application and is preconfigured to install the Angular
-framework and a bunch of development and testing tools for instant web development gratification.
-
 ## Requirements
 * nodejs 4.+
 * npm 3.+
@@ -16,52 +9,6 @@ framework and a bunch of development and testing tools for instant web developme
 * Karma  
 * Jasmine
 
-## Getting Started
-
-To get you started you can simply clone the `wc-ng-skeleton` repository and install the dependencies:
-
-### Prerequisites
-
-You need git to clone the `wc-ng-skeleton` repository. You can get git from [here][git].
-
-### Clone `wc-ng-skeleton`
-
-Clone the `wc-ng-skeleton` repository using git:
-
-```
-git clone https://ddgit.me/stew/wc-ng-skeleton.git
-cd wc-ng-skeleton
-```
-
-If you just want to start a new project without the `wc-ng-skeleton` commit history then you can do:
-
-```
-git clone --depth=1 https://ddgit.me/stew/wc-ng-skeleton.git <your-project-name>
-```
-
-The `depth=1` tells git to only pull down one commit worth of historical data.
-
-### Install project dependencies
-
-#### Prerequisites
-
-In order for your npm command line client to work with Artifactory you will firstly need to set the relevant authentication. For getting authentication details run the following command:
-```bash
-curl -u<USERNAME>:<PASSWORD> https://artifactory.doubledutch.me/artifactory/api/npm/auth
-```
-
-`<USERNAME>` is your ddgit username
-
-`<PASSWORD>` generated token from your profile in [double dutch artifactory](https://artifactory.doubledutch.me/artifactory/webapp/#/home)  
-
-The response should be pasted in the <PROJECT_ROOT>/.npmrc file. Here is an example of the content of the file:
-
-```
-_auth = {{RESPONSE_KEY}}
-email = youremail@email.com
-always-auth = true
-registry = https://artifactory.doubledutch.me/artifactory/api/npm/npm
-```
 #### Install
 ```bash
 npm i
