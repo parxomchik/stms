@@ -6,8 +6,6 @@ export class Draggable implements ng.IDirective {
 		return directive;
 	}
 
-
-
 	constructor(private $document: ng.IDocumentService, private $window: ng.IWindowService) {
 		'ngInject';
 	}
@@ -20,27 +18,12 @@ export class Draggable implements ng.IDirective {
 		onCoordinatesChanged: '&'
 	};
 	public link: ng.IDirectiveLinkFn = (scope: any, elem: ng.IAugmentedJQuery, attrs: any): void => {
-		let self: Draggable = this;
-		function mousemove(event: any): void {
-			y = event.pageY - startY;
-			x = event.pageX - startX;
-			elem.css({
-				top: y + 'px',
-				left: x + 'px'
-			});
-		}
-
-		function mouseup(): any {
-			scope.onCoordinatesChanged({ coordinates : { x , y } });
-
-			self.$document.unbind('mousemove', mousemove);
-			self.$document.unbind('mouseup', mouseup);
-		}
+		const self: Draggable = this;
 
 		let startX: number = 0;
 		let startY: number = 0;
 
-		// Start with a random pos
+		// set initial position
 		let x: number = scope.startX;
 		let y: number = scope.startY;
 
@@ -51,11 +34,27 @@ export class Draggable implements ng.IDirective {
 			left: x + 'px'
 		});
 
+
+		function mousemove(event: any): void {
+			y = event.pageY - startY;
+			x = event.pageX - startX;
+			elem.css({
+				top: y + 'px',
+				left: x + 'px'
+			});
+		}
+
+		function mouseup(): void {
+			scope.onCoordinatesChanged({ coordinates : { x , y } });
+
+			self.$document.unbind('mousemove', mousemove);
+			self.$document.unbind('mouseup', mouseup);
+		}
+
 		elem.on('mousedown', (event: any): void => {
 			event.preventDefault();
 			startX = event.pageX - x;
 			startY = event.pageY - y;
-
 
 			this.$document.on('mousemove', mousemove);
 			this.$document.on('mouseup', mouseup);
