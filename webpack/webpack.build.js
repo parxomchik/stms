@@ -20,9 +20,10 @@ module.exports = {
     },
     plugins: [
 		new CopyWebpackPlugin([
-            { from: 'src/fonts/glyphicons-halflings-regular.woff', to: 'fonts' },
-            { from: 'src/fonts/glyphicons-halflings-regular.ttf', to: 'fonts' },
-            { from: 'src/fonts/glyphicons-halflings-regular.eot', to: 'fonts' },
+			{ context: './src/assets/images', from: '**/*', to: './assets/images' },
+            { from: 'src/assets/fonts/glyphicons-halflings-regular.woff', to: 'fonts' },
+            { from: 'src/assets/fonts/glyphicons-halflings-regular.ttf', to: 'fonts' },
+            { from: 'src/assets/fonts/glyphicons-halflings-regular.eot', to: 'fonts' },
         ]),
         new webpack.optimize.UglifyJsPlugin({
             warning: false,

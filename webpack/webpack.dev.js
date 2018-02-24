@@ -22,6 +22,12 @@ module.exports = {
     },
     // devtool: "source-map",
     plugins: [
+		new CopyWebpackPlugin([
+			{ context: './src/assets/images', from: '**/*', to: './assets/images' },
+            { from: 'src/assets/fonts/glyphicons-halflings-regular.woff', to: 'fonts' },
+            { from: 'src/assets/fonts/glyphicons-halflings-regular.ttf', to: 'fonts' },
+            { from: 'src/assets/fonts/glyphicons-halflings-regular.eot', to: 'fonts' },
+        ]),
         new HtmlWebpackPlugin({
             template: './index.html',
             inject: 'body',
