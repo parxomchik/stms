@@ -22,6 +22,7 @@ module.exports = {
 		new CopyWebpackPlugin([
             { from: 'src/fonts/glyphicons-halflings-regular.woff', to: 'fonts' },
             { from: 'src/fonts/glyphicons-halflings-regular.ttf', to: 'fonts' },
+            { from: 'src/fonts/glyphicons-halflings-regular.eot', to: 'fonts' },
         ]),
         new webpack.optimize.UglifyJsPlugin({
             warning: false,

@@ -1,5 +1,5 @@
 export default {
 	'main': {
-		title: 'Your app works!'
+		title: 'Welcome message'
 	}
 };
