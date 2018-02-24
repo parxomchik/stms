@@ -76,7 +76,7 @@
 <div class="container">
 	<div class="row">
 		<h1 class="text-center" translate>main.title</h1>
-		<h2 class="text-center"> User name</h2>
-		<img class="user-img center-block" src="assets/images/user.png" alt="user-img">
+		<h2 class="text-center"ng-draggable start-x="vm.nameX" start-y="vm.nameY" on-position-changed="vm.onPositionChanged2(x, y)"> User name</h2>
+		<img class="user-img center-block" src="assets/images/user.png" alt="user-img" ng-draggable start-x="vm.imgX" start-y="vm.imgY"  on-coordinates-changed="vm.onPositionChanged2(coordinates)">
 	</div>
 </div>

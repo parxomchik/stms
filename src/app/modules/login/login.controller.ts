@@ -6,6 +6,8 @@ export default class LoginController {
 
     $onInit(): void {
 
-    }
+	}
+
+
 
 }
