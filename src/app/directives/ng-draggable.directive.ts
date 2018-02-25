@@ -59,5 +59,5 @@ export class Draggable implements ng.IDirective {
 			this.$document.on('mousemove', mousemove);
 			this.$document.on('mouseup', mouseup);
 		});
-	};
+	}
 }

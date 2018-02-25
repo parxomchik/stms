@@ -17,12 +17,14 @@ import { APP_NAME } from '../config/app.config';
 
 import { InterceptorsService } from './core.interceptors';
 import { CoreService } from './core.service';
+import directivesModule from '../directives/directives.module';
 
 const module: ng.IModule = angular.module(`${APP_NAME}.core`, [
 	'ui.router',
 	'pascalprecht.translate',
 	'ngAnimate',
-	'ngSanitize'
+	'ngSanitize',
+	directivesModule
 ]);
 
 module.constant('wrapper', wrapper);
