@@ -16,7 +16,6 @@ export default class MainController {
     }
 
 	onPositionChanged(user: IUser, name: string, coordinates: ICoordinates): void {
-		console.log('onPositionChanged coordinates', coordinates);
 		user[name].coordinates = coordinates;
 		this.authService.updateProfile(user)
 			.then(res => console.log(res))
