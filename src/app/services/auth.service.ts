@@ -19,8 +19,8 @@ export class AuthService {
 	}
 
 
-	public isAuthorized(): any {
-		const token: string = this.localStorageService.get('token');
+	public isAuthorized(): string {
+		const token: any = this.localStorageService.get('token');
 
 		return token;
 	}

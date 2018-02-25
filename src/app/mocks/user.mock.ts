@@ -1,6 +1,4 @@
-import { IUser } from '../models/user.model';
-
-export const userMock: IUser = {
+export default {
 	image: {
 		src: 'assets/images/user.png',
 		coordinates: {

@@ -16,7 +16,7 @@ describe('Login', () => {
         $scope = _$rootScope_.$new();
         $q = _$q_;
         deferred = _$q_.defer();
-        sut = new controller();
+        // sut = new controller();
     }));
 
 });

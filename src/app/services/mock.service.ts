@@ -1,4 +1,4 @@
-import { userMock } from '../mocks/user.mock';
+import userMock from '../mocks/user.mock';
 import { IUser } from '../models/user.model';
 
 export class MockService {
@@ -10,7 +10,7 @@ export class MockService {
 	}
 
 	getProfile(): IUser {
-		const user: IUser  = this.localStorageService.get('user');
+		const user: any  = this.localStorageService.get('user');
 		return user ? user : userMock;
 	}
 
