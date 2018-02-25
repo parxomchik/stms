@@ -19,6 +19,6 @@ export class InterceptorsService {
 		}
 
 		return config;
-	};
+	}
 	/* tslint:disable: no-string-literal */
 }

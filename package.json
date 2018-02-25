@@ -18,6 +18,7 @@
     "angular": "1.5.8",
     "angular-animate": "~1.5.8",
     "angular-cookies": "~1.5.8",
+    "angular-local-storage": "^0.7.1",
     "angular-sanitize": "~1.5.8",
     "angular-translate": "~2.13.0",
     "angular-translate-loader-partial": "~2.13.0",

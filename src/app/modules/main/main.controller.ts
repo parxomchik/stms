@@ -1,29 +1,40 @@
+import { AuthService } from '../../services/auth.service';
+import { IUser, ICoordinates } from '../../models/user.model';
+
 export default class MainController {
-	public userImage: Object;
-	public userName: Object;
-    constructor() {
+	public user: any;
+    constructor(
+		private authService: AuthService,
+		private $state: ng.ui.IStateService,
+		private routePrefix: string
+	) {
         'ngInject';
     }
 
     $onInit(): void {
-		this.userImage = {
-			coordinates: {
-				x: 200,
-				y: 200
-			},
-			name: ''
-		};
-
-		this.userImage = {
-			coordinates: {
-				x: 200,
-				y: 200
-			},
-			src: ''
-		};
+		this.authService.user ? this.user = this.authService.user : this.getProfile();
     }
 
-	onPositionChanged(initialState: any, coordinates: any): void {
+	onPositionChanged(user: IUser, name: string, coordinates: ICoordinates): void {
 		console.log('onPositionChanged coordinates', coordinates);
+		user[name].coordinates = coordinates;
+		this.authService.updateProfile(user)
+			.then(res => console.log(res))
+			.catch(err => console.log(err));
+
 	}
+
+
+	logOut(): void {
+		this.authService.logOut()
+			.then(res => this.$state.go(`${this.routePrefix}login`))
+			.catch(err => console.log(err));
+	}
+
+	getProfile(): void {
+		this.authService.getProfile()
+			.then(res => this.user = res)
+			.catch(err => console.log(err));
+	}
+
 }
